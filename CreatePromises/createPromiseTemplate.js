@@ -1,6 +1,11 @@
 var APromise = {};
 
 APromise.all = function (promises) {
+	var promise = Promise.resolve();
+	Promise.all([true, promise])
+		.then(function(values){
+			return(values)
+		});
 	try {
 		return Promise.resolve(promises);
 		} catch (e) {
